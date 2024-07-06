@@ -8,3 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 Website template was given by Ezitech institue RWP and is available of colorlib
+
+# Hepta-clone
+
+First task of my Front-end Internship
