@@ -12,3 +12,4 @@ Website template was given by Ezitech institue RWP and is available of colorlib
 # Hepta-clone
 
 First task of my Front-end Internship
+First react project to be deployed as well
