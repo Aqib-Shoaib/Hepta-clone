@@ -5,10 +5,18 @@ import ContactForm from "../Components/ContactForm";
 
 const Reviews = styled.div`
   display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding-top: 4rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 1100px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 `;
 const TourDiv = styled.div`
   display: flex;
@@ -23,6 +31,17 @@ const BigHeading = styled.h2`
   font-size: 6rem;
   text-align: center;
   padding: 1rem 15rem;
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    padding: 1rem 7rem;
+  }
+  @media (max-width: 570px) {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 1rem 3rem;
+  }
 `;
 
 function Contact() {

@@ -3,20 +3,35 @@ import Hero from "../Components/Hero";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto;
   gap: 1.5rem;
-  padding: 8rem;
+  place-items: center;
+  padding: 3rem 1rem;
+  @media (min-width: 768px) {
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 8rem;
+  }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 80%;
   height: auto;
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const Imgbig = styled.img`
-  width: 100%;
+  width: 80%;
   height: auto;
-  grid-column: span 2;
+  @media (min-width: 1024px) {
+    width: 100%;
+    grid-column: span 2;
+  }
 `;
 
 function Gallery() {

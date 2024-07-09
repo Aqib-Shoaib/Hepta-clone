@@ -6,21 +6,37 @@ import HotelFeature from "../Components/HotelFeature";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto;
   align-items: center;
   justify-content: center;
-  padding: 8.5rem 0rem;
+  @media (min-width: 768px) {
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: auto auto auto;
+  }
 `;
 const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0rem 10.5rem;
+  flex-direction: column;
   gap: 6rem;
+  padding: 3rem 1rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    padding: 3rem 10rem;
+  }
 `;
 const Image = styled.img`
-  height: 80vh;
-  width: 40vw;
+  height: auto;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 const H2 = styled.h2`
   font-family: "Abril Fatface", serif;
@@ -68,8 +84,18 @@ const BigHeading = styled.h2`
   font-size: 6rem;
   text-align: center;
   padding: 1rem 15rem;
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    padding: 1rem 7rem;
+  }
+  @media (max-width: 570px) {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 1rem 3rem;
+  }
 `;
-
 const Para = styled.p`
   color: rgb(108, 117, 125);
   font-size: 1.25rem;

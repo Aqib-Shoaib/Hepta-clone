@@ -2,28 +2,45 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   background: #1a1a1a;
-  height: 120vh;
-  padding: 80px 0 20px;
+  padding: 80px 20px 20px;
   color: #fff;
   font-family: "Mukta Mahee", sans-serif;
+
+  @media (min-width: 768px) {
+    padding: 80px 40px 20px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 80px 60px 20px;
+  }
 `;
 
 const FooterWrapper = styled.div`
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 15px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
 const FooterColumn = styled.div`
-  flex: 1 1 20%;
+  flex: 1 1 100%;
   margin-bottom: 30px;
+  text-align: center;
 
-  @media (max-width: 768px) {
-    flex: 1 1 100%;
-    text-align: center;
+  @media (min-width: 768px) {
+    flex: 1 1 45%;
+    text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    flex: 1 1 22%;
+    margin-bottom: 0;
   }
 `;
 
@@ -59,8 +76,14 @@ const FooterText = styled.p`
 
 const FooterForm = styled.form`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  position: relative;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 `;
 
 const FooterInput = styled.input`
@@ -79,7 +102,6 @@ const FooterInput = styled.input`
   }
   &:focus {
     outline: none;
-
     border-bottom: 1px solid rgba(255, 255, 255, 1);
   }
 `;
@@ -87,9 +109,6 @@ const FooterInput = styled.input`
 const FooterButton = styled.button`
   padding: 10px;
   cursor: pointer;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
   border: none;
   background: transparent;
   color: white;
@@ -102,6 +121,7 @@ const FooterSocialLinks = styled.div`
   gap: 2rem;
   margin-top: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const SocialLink = styled.a`
@@ -120,8 +140,16 @@ const FooterBottom = styled.div`
   font-weight: 200;
   line-height: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 0rem 5rem;
-  padding: 15px opx;
+  margin: 0 1rem;
+  padding: 15px 0;
+
+  @media (min-width: 768px) {
+    margin: 0 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin: 0 5rem;
+  }
 `;
 
 const Footer = () => {

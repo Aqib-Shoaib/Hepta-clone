@@ -22,18 +22,50 @@ const Main = styled.main`
   height: 70vh;
   color: #fff;
   font-family: "Mukta Mahee", sans-serif;
+  text-align: center;
+  padding: 0 1rem;
+
+  @media (min-width: 1024px) {
+    height: 80vh;
+  }
 `;
+
 const H2 = styled.h2`
-  font-size: 6rem;
+  font-size: 2.5rem;
   font-family: "Abril Fatface", serif;
   font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 5rem;
+  }
 `;
+
 const P = styled.p`
-  font-size: 2.5rem;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   font-weight: 300;
   color: #fdffff;
-  font-weight: 200;
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 2rem;
+  }
 `;
 
 const Colorlib = styled.a`
@@ -49,12 +81,13 @@ const Colorlib = styled.a`
     border-color: #fff;
   }
 `;
+
 const Button = styled.button`
   background: transparent;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 10px;
+  padding: 10px 20px;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -66,6 +99,21 @@ const Button = styled.button`
     color: #000;
     background-color: #fff;
   }
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+    padding: 15px 30px;
+  }
 `;
 
 const ScrollDiv = styled.div`
@@ -75,49 +123,119 @@ const ScrollDiv = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 3px;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    bottom: 2rem;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: 3rem;
+  }
 `;
 
 const StyledAbout = styled.section`
-  height: 150vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
-  border-bottom: 1px solid gray;
-  padding: 10rem;
+  padding: 2rem 1rem;
   gap: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 5rem 2rem;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 10rem 5rem;
+    gap: 4rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 15rem 10rem;
+  }
 `;
+
 const WelcomeDiv = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   font-family: "Mukta Mahee", sans-serif;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
+
 const WelcomeHeading = styled.h2`
   font-family: "Abril Fatface", serif;
   font-size: 2rem;
   font-weight: 300;
   padding: 1rem 0;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 3.5rem;
+  }
 `;
+
 const WelcomePara = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
   color: rgb(108, 117, 125);
-  padding: 1rem 0rem;
+  padding: 1rem 0;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const VideoLink = styled.span`
   color: rgb(63, 154, 148);
-  font-size: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   cursor: pointer;
+  margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const PlayIcon = styled.span`
@@ -127,6 +245,7 @@ const PlayIcon = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     color: #000;
     border-color: #000;
@@ -154,6 +273,14 @@ const CloseButton = styled(IoClose)`
   color: #fff;
   cursor: pointer;
 `;
+const Image = styled.img`
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
 
 function HeroAbout() {
   const [showVideo, setShowVideo] = useState(false);
@@ -176,7 +303,10 @@ function HeroAbout() {
         </ScrollDiv>
       </StyledHero>
       <StyledAbout>
-        <img src="./hepta-colorlib/img_1_long.jpg" alt="back of a young man" />
+        <Image
+          src="./hepta-colorlib/img_1_long.jpg"
+          alt="back of a young man"
+        />
         <WelcomeDiv>
           <WelcomeHeading>Welcome To Our Website</WelcomeHeading>
           <WelcomePara>
@@ -191,7 +321,7 @@ function HeroAbout() {
           </WelcomePara>
           <VideoLink onClick={() => setShowVideo(true)}>
             <PlayIcon>
-              <FaPlay />{" "}
+              <FaPlay />
             </PlayIcon>
             WATCH THE VIDEO
           </VideoLink>

@@ -6,14 +6,21 @@ import { FaSearch } from "react-icons/fa";
 
 const PostContainer = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
+  @media (min-width: 992px) {
+    grid-template-columns: auto auto;
+  }
 `;
 const MainGrid = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
-  padding: 10rem 5rem;
+  grid-template-columns: auto;
+  place-items: center;
   gap: 5rem;
   background-color: #fafafa;
+  @media (min-width: 992px) {
+    grid-template-columns: 60% 40%;
+    padding: 10rem 5rem;
+  }
 `;
 
 const SearchContainer = styled.div`
@@ -22,11 +29,13 @@ const SearchContainer = styled.div`
   justify-content: center;
   padding: 2rem;
   background-color: #fff;
-  width: 310px;
+  width: 80%;
+  /* width: 310px; */
 `;
 
 const SearchInput = styled.input`
-  width: 250px;
+  /* width: 250px; */
+  width: 80%;
   padding: 10px 20px 10px 40px;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
@@ -81,6 +90,13 @@ const Div = styled.div`
   margin: 0.5rem 1rem;
   padding-bottom: 1rem;
 `;
+const Temp = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin: 1rem 0rem;
+  width: 310px;
+`;
 
 function News() {
   return (
@@ -106,15 +122,7 @@ function News() {
               <SearchInput type="text" placeholder="Search..." />
             </InputWrapper>
           </SearchContainer>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              background: "#fff",
-              margin: "1rem 0rem",
-              width: "310px",
-            }}
-          >
+          <Temp>
             <H3>Popular Posts </H3>
             <Smallpost image="img_1.jpg" />
             <Smallpost image="img_4.jpg" />
@@ -122,16 +130,8 @@ function News() {
             <Smallpost image="img_4.jpg" />
             <Smallpost image="img_3.jpg" />
             <Smallpost image="img_2.jpg" />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              background: "#fff",
-              margin: "1rem 0rem",
-              width: "310px",
-            }}
-          >
+          </Temp>
+          <Temp>
             <H3>Categories</H3>
             <Div>
               <Category>Events</Category>
@@ -149,7 +149,7 @@ function News() {
               <Category>Promos</Category>
               <Number>(8)</Number>
             </Div>
-          </div>
+          </Temp>
         </div>
       </MainGrid>
     </div>

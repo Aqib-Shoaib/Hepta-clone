@@ -10,6 +10,7 @@ const Heading = styled.h2`
   font-family: "Abril Fatface", serif;
   font-weight: 300;
   font-size: 2rem;
+  text-align: center;
 `;
 const BigHeading = styled.h2`
   font-family: "Abril Fatface", serif;
@@ -17,12 +18,24 @@ const BigHeading = styled.h2`
   font-size: 6rem;
   text-align: center;
   padding: 1rem 15rem;
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    padding: 1rem 7rem;
+  }
+  @media (max-width: 570px) {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 1rem 3rem;
+  }
 `;
 
 const Para = styled.p`
   color: rgb(108, 117, 125);
   font-size: 1.25rem;
   font-family: "Mukta Mahee", sans-serif;
+  text-align: center;
 `;
 const Explore = styled.div`
   display: flex;
@@ -34,16 +47,22 @@ const Explore = styled.div`
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto;
   align-items: center;
   justify-content: center;
+  @media (min-width: 768px) {
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: auto auto auto;
+  }
 `;
 const TourDiv = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 10rem 1rem;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 const Blogs = styled.div`
   background-color: #65c0ba;
@@ -52,13 +71,31 @@ const Blogs = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 1100px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 `;
 
 const Reviews = styled.div`
   display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 1100px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 `;
 const Destinations = styled.div`
   display: flex;
@@ -67,6 +104,15 @@ const Destinations = styled.div`
   gap: 1.5rem;
   padding-top: 3rem;
   padding-bottom: 7rem;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 `;
 
 function Homepage() {

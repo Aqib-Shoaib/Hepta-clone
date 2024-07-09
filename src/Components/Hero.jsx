@@ -17,14 +17,15 @@ const Main = styled.main`
   flex-direction: column;
   color: #fff;
   font-family: "Mukta Mahee", sans-serif;
+  height: 65vh;
 `;
 const H2 = styled.h2`
-  font-size: 6rem;
+  font-size: 3rem;
   font-family: "Abril Fatface", serif;
   font-weight: 400;
 `;
 const P = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   letter-spacing: 0.5px;
   font-weight: 300;
   color: #fdffff;

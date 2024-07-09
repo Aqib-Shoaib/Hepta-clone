@@ -8,8 +8,14 @@ const Image = styled.img`
   border-radius: 50%;
 `;
 const StyledReview = styled.div`
-  width: 27vw;
+  width: 100%;
   font-style: italic;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+  @media (min-width: 1024px) {
+    width: 30%;
+  }
 `;
 const Para = styled.p`
   font-size: 20px;

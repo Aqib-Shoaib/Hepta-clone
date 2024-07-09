@@ -9,23 +9,34 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   width: 80%;
   max-width: 1200px;
   gap: 2.5rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Form = styled.form`
-  width: 60%;
+  width: 100%;
   background: #fff;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @media (min-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const InputGroup = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   gap: 1rem;
   margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const FormControl = styled.div`
@@ -86,9 +97,12 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  width: 40%;
+  width: 100%;
   padding: 2rem;
   color: #333;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 const InfoItem = styled.div`

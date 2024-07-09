@@ -10,53 +10,82 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 const Heading = styled.h2`
-  font-size: 4rem;
+  font-size: 2rem;
   font-family: "Abril Fatface", serif;
   letter-spacing: 0.4px;
   font-weight: 300;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
 `;
 
 const Button = styled.button`
   border: none;
   background: transparent;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 `;
 
 const StyledNavigation = styled.nav`
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `;
 
-const Li = styled.li`
+const Ul = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
   list-style: none;
 `;
 
-const iconStyles = {
-  fontSize: "4rem",
-  fontWeight: "300",
-  color: "white",
-  cursor: "pointer",
-};
+const Li = styled.li`
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    margin: 0 1rem;
+  }
+`;
+
 const iconStyles2 = {
-  fontSize: "4rem",
-  fontWeight: "300",
   color: "black",
   position: "absolute",
-  top: "3rem",
+  top: "1.5rem",
   right: "1rem",
-  cursor: "pointer",
 };
 
 const StyledNavLink = styled(NavLink)`
-  font-size: 4rem;
+  font-size: 2rem;
   font-family: "Abril Fatface", serif;
   text-decoration: none;
   color: #000;
@@ -66,44 +95,51 @@ const StyledNavLink = styled(NavLink)`
   &.active {
     color: #65c0ba;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 function Nav() {
   const [navOpen, setNavOpen] = useState(false);
 
-  return !navOpen ? (
-    <StyledNav>
-      <Heading>Hepta</Heading>
-      <Button type="button" onClick={() => setNavOpen(true)}>
-        <FaBars style={iconStyles} />
-      </Button>
-    </StyledNav>
-  ) : (
-    <StyledNavigation>
-      <Button type="button" onClick={() => setNavOpen(false)}>
-        <IoClose style={iconStyles2} />
-      </Button>
-      <ul>
-        <Li>
-          <StyledNavLink to="/home">Home</StyledNavLink>
-        </Li>
-        <Li>
-          <StyledNavLink to="/hotels">Hotels</StyledNavLink>
-        </Li>
-        <Li>
-          <StyledNavLink to="/about">About Us</StyledNavLink>
-        </Li>
-        <Li>
-          <StyledNavLink to="/gallery">Gallery</StyledNavLink>
-        </Li>
-        <Li>
-          <StyledNavLink to="/news">News</StyledNavLink>
-        </Li>
-        <Li>
-          <StyledNavLink to="/contact">Contact</StyledNavLink>
-        </Li>
-      </ul>
-    </StyledNavigation>
+  return (
+    <>
+      <StyledNav>
+        <Heading>Hepta</Heading>
+        <Button type="button" onClick={() => setNavOpen(true)}>
+          <FaBars />
+        </Button>
+      </StyledNav>
+      {navOpen && (
+        <StyledNavigation>
+          <Button type="button" onClick={() => setNavOpen(false)}>
+            <IoClose style={iconStyles2} />
+          </Button>
+          <Ul>
+            <Li>
+              <StyledNavLink to="/home">Home</StyledNavLink>
+            </Li>
+            <Li>
+              <StyledNavLink to="/hotels">Hotels</StyledNavLink>
+            </Li>
+            <Li>
+              <StyledNavLink to="/about">About Us</StyledNavLink>
+            </Li>
+            <Li>
+              <StyledNavLink to="/gallery">Gallery</StyledNavLink>
+            </Li>
+            <Li>
+              <StyledNavLink to="/news">News</StyledNavLink>
+            </Li>
+            <Li>
+              <StyledNavLink to="/contact">Contact</StyledNavLink>
+            </Li>
+          </Ul>
+        </StyledNavigation>
+      )}
+    </>
   );
 }
 
